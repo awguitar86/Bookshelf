@@ -5,6 +5,7 @@ var bc = require(__dirname + '/controllers/books_controller.js');
 var app = express();
 
 app.use( bodyParser.json() );
+app.use( express.static( __dirname + "/../public.build") );
 
 const baseURL = "/api/books";
 app.post( baseURL, bc.create );
