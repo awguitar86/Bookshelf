@@ -1,8 +1,6 @@
-import { basename } from 'path';
-
 var express = require('express');
 var bodyParser = require('body-parser');
-var bc = require(__dirname + './controllers/books_controller.js');
+var bc = require(__dirname + '/controllers/books_controller.js');
 
 var app = express();
 
