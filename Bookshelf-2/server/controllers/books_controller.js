@@ -23,6 +23,10 @@ module.exports = {
         };
         res.status(200).send( books );
     },
-    delete:
-
-}
+    delete: (req, res) => {
+        const deleteID = req.params.id;
+        bookID = books.findIndex( book => book.id == deleteID);
+        books.splice( bookID, 1);
+        res.status(200).send( books );
+    }
+};
