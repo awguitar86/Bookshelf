@@ -12,7 +12,17 @@ module.exports = {
     read: (req, res) => {
         res.status(200).send( books );
     },
-    update: ,
+    update: (req, res) => {
+        const updateID = req.params.id;
+        let index = books.findIndex( book => book.id == updateID );
+
+        books[ index ] = {
+            id: books[index].id,
+            title: req.body.title || books[index].title,
+            author: req.body.author || books[index].author
+        };
+        res.status(200).send( books );
+    },
     delete:
 
 }
